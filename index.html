@@ -1,0 +1,97 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+
+      <title>Text Replace</title>
+      <meta name="description" content="The HTML5 Herald">
+      <meta name="author" content="SitePoint">
+
+      <style>
+
+        body, html {
+            margin:0;
+            padding:0;
+        }
+
+        h1 ,h2, h3{
+            color:#fff;
+            margin:0;
+        }
+
+        header {
+            
+            padding:40px;
+            background:#bbb;
+             margin-bottom:2px;
+        }
+
+        .container {
+            width:900px;
+            margin:0 auto;
+        }
+
+        section {
+            width:calc(100% - 80px);
+            background:skyblue;
+            padding:40px;
+            margin-bottom:2px;
+        }
+      </style>
+
+    </head>
+
+    <body>
+
+        <div class="container">
+
+            <header>
+                <h1>Simple Text Replace</h1>
+                <h3>(cake to ice cream)</h3>
+            </header>
+
+            <section>
+                <h1>I like chocolate cake</h1>
+                <h2>Do you like chocolate cake?</h2>
+            </section>
+
+            <section>
+                <h1>I shouldn't have eaten that cake</h1>
+                <h2>I'm so full of cake</h2>
+            </section>
+
+            <section>
+                <h1>I wouldn't change a thing</h1>
+                <h2>To be honest though...</h2>
+            </section>
+
+        </div>
+
+         
+        <script>
+
+        const heading1 = document.getElementsByTagName('h1');
+        const heading2 = document.getElementsByTagName('h2');
+
+        function replaceCake (heading) {
+
+            for (i = 0; i < heading.length; i += 1) {
+
+                if (heading[i].textContent.includes("cake")) {
+
+                    const newWord = heading[i].textContent.replace("cake", "ice cream");
+                    heading[i].textContent = newWord;
+
+                }
+            }
+        }
+
+        replaceCake(heading1);
+        replaceCake(heading2);
+
+        </script>
+
+    </body>
+    
+</html>
